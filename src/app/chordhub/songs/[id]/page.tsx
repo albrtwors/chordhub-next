@@ -10,17 +10,31 @@ import { routeClient } from "../../../../../constants/defaultPathClient"
 export default function Page(){
     const {id} = useParams()
     const [song,setSong]: any = useState(null)
-    useEffect(()=>{
-      
+    // useEffect(() => {
 
-        axios.get(`${routeClient()}/api/auth/songs/${id}`).then(res=>{
-            const {song} = res.data
-            setSong(song)
-        })
-       
-        
-    }, [])
-   
+    // const fetchSong = async () => {
+
+    //     try {
+
+    //     const res = await axios.get(`${routeClient()}/api/auth/songs/${id}`);
+
+    //     const { song } = res.data;
+
+    //     setSong(song);
+
+    //     } catch (error) {
+
+    //         console.error('Error fetching song:', error);
+
+    //         setSong(null); 
+
+    //     }
+
+    // };
+
+    // fetchSong();
+
+    // }, [id]);
     
    
 
