@@ -16,8 +16,6 @@ export const metadata: Metadata = {
 
 export default async function Ecommerce() {
 
-  const result = await axios.get('/api/auth/cookies')
-  console.log(result)
 
   return (
     <div className="grid grid-cols-12 gap-4 md:gap-6">
