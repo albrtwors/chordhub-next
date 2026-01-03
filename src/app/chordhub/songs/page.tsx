@@ -5,12 +5,12 @@ import { route } from "../../../../constants/defaultPath";
 
 export default async function Page(){
     let songs: any | Array<object>  = null
-    // try{
-    //     const {data} = await axios.get(`${route}/api/auth/songs`)
-    //     songs = data.songs
-    // }catch(e){
-    //     console.error(e)
-    // }
+    try{
+        const {data} = await axios.get(`${route}/api/auth/songs`)
+        songs = data.songs
+    }catch(e){
+        console.error(e)
+    }
   
     return <div className="flex flex-col gap-3">
         <h1 className="text-3xl font-bold">Canciones</h1>
