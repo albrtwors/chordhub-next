@@ -1,0 +1,1 @@
+export const route = process.env.BASE_PATH
