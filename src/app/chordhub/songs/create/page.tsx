@@ -10,6 +10,8 @@ import Alert from "@/utils/swalClass"
 import axios from "axios"
 import { useState } from "react"
 import * as z from "zod"
+import { route } from "../../../../../constants/defaultPath"
+import { routeClient } from "../../../../../constants/defaultPathClient"
 
 interface Part {
   type: string;
@@ -66,7 +68,7 @@ export default function Page(){
 
       Alert.LoadingAlert()
       
-      const res:any = await axios.post('/api/auth/songs', objectForm, 
+      const res:any = await axios.post(`${routeClient()}/api/auth/songs`, objectForm, 
         {headers: {
           'Content-Type': 'application/json'
         }})

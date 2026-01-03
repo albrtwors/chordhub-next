@@ -9,6 +9,7 @@ import React, { FormEvent, useState } from "react";
 import axios from 'axios'
 import Alert from "@/utils/swalClass";
 import Swal from "sweetalert2";
+import { routeClient } from "../../../constants/defaultPathClient";
 export default function SignInForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
@@ -19,7 +20,7 @@ export default function SignInForm() {
     const formData = new FormData(e.target)
    
     Alert.LoadingAlert()
-    const response:any = await axios.post('/api/auth/login',formData, {
+    const response:any = await axios.post(`${routeClient()}/api/auth/login`,formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

@@ -5,12 +5,15 @@ import axios from "axios"
 import { useParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
+import { routeClient } from "../../../../../constants/defaultPathClient"
+
 export default function Page(){
     const {id} = useParams()
     const [song,setSong]: any = useState(null)
     useEffect(()=>{
       
-        axios.get(`/api/auth/songs/${id}`).then(res=>{
+
+        axios.get(`${routeClient()}/api/auth/songs/${id}`).then(res=>{
             const {song} = res.data
             setSong(song)
         })

@@ -10,6 +10,7 @@ import PasswordInput from "../form/input/PasswordInput";
 import Alert from "@/utils/swalClass";
 import axios from "axios";
 import { signData } from "../../../schemas/auth/signSchema";
+import { routeClient } from "../../../constants/defaultPathClient";
 
 export default function SignUpForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -30,7 +31,7 @@ export default function SignUpForm() {
 
 
       Alert.LoadingAlert()
-      const response:any = await axios.post('/api/auth/sign',formData, {
+      const response:any = await axios.post(`${routeClient()}/api/auth/sign`,formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

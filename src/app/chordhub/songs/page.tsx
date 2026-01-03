@@ -1,9 +1,11 @@
 import SongCard from "@/components/chordhub/songs/SongCard";
 import SongGrid from "@/components/chordhub/songs/SongGrid";
 import axios from "axios";
+import { route } from "../../../../constants/defaultPath";
 
 export default async function Page(){
-    const {data} = await axios.get('/api/auth/songs')
+   
+    const {data} = await axios.get(`${route}/api/auth/songs`)
     const {songs} = data
   
     return <div className="flex flex-col gap-3">

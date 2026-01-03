@@ -1,0 +1,1 @@
+export const routeClient = ()=>{return window.location.origin}
